@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc-service-deployment
+  labels:
+    app: mc-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mc-service
+  template:
+    metadata:
+      labels:
+        app: mc-service
+    spec:
+      containers:
+        - name: mc-service-container
+          image: gcr.io/adversarial-ai-445520/bert-inference:latest  
+          ports:
+            - containerPort: 8000
+          readinessProbe:                           
+            httpGet:
+              path: /health                         
+              port: 8000
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health                       
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10

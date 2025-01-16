@@ -1,0 +1,110 @@
+2025-01-15 07:40:08,926 - INFO - Attack failed on sample 0: Text: This movie was fantastic!, Queries: 82, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:09,189 - INFO - Attack failed on sample 1: Text: The film was a disaster., Queries: 36, Perturbed words: 2, Positive score: 0.0010
+2025-01-15 07:40:09,460 - INFO - Attack successful on sample 2: Text: This movie was fantastic!, Queries: 95, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:09,719 - INFO - Attack successful on sample 3: Text: The film was a disaster., Queries: 70, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:10,001 - INFO - Attack failed on sample 4: Text: This movie was fantastic!, Queries: 5, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:10,256 - INFO - Attack successful on sample 5: Text: The film was a disaster., Queries: 30, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:10,561 - INFO - Attack successful on sample 6: Text: This movie was fantastic!, Queries: 72, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:10,826 - INFO - Attack failed on sample 7: Text: The film was a disaster., Queries: 90, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:11,099 - INFO - Attack successful on sample 8: Text: This movie was fantastic!, Queries: 58, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:11,363 - INFO - Attack successful on sample 9: Text: The film was a disaster., Queries: 1, Perturbed words: 2, Positive score: 0.0010
+2025-01-15 07:40:11,639 - INFO - Attack failed on sample 10: Text: This movie was fantastic!, Queries: 44, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:11,929 - INFO - Attack failed on sample 11: Text: The film was a disaster., Queries: 98, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:12,182 - INFO - Attack failed on sample 12: Text: This movie was fantastic!, Queries: 49, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:12,438 - INFO - Attack failed on sample 13: Text: The film was a disaster., Queries: 45, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:12,719 - INFO - Attack successful on sample 14: Text: This movie was fantastic!, Queries: 6, Perturbed words: 4, Positive score: 0.9894
+2025-01-15 07:40:12,993 - INFO - Attack successful on sample 15: Text: The film was a disaster., Queries: 49, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:13,274 - INFO - Attack successful on sample 16: Text: This movie was fantastic!, Queries: 81, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:13,525 - INFO - Attack failed on sample 17: Text: The film was a disaster., Queries: 91, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:13,778 - INFO - Attack successful on sample 18: Text: This movie was fantastic!, Queries: 30, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:14,061 - INFO - Attack failed on sample 19: Text: The film was a disaster., Queries: 30, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:14,317 - INFO - Attack failed on sample 20: Text: This movie was fantastic!, Queries: 59, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:14,594 - INFO - Attack successful on sample 21: Text: The film was a disaster., Queries: 46, Perturbed words: 2, Positive score: 0.0010
+2025-01-15 07:40:14,848 - INFO - Attack successful on sample 22: Text: This movie was fantastic!, Queries: 90, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:15,098 - INFO - Attack successful on sample 23: Text: The film was a disaster., Queries: 22, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:15,377 - INFO - Attack failed on sample 24: Text: This movie was fantastic!, Queries: 21, Perturbed words: 4, Positive score: 0.9894
+2025-01-15 07:40:15,653 - INFO - Attack failed on sample 25: Text: The film was a disaster., Queries: 82, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:15,945 - INFO - Attack failed on sample 26: Text: This movie was fantastic!, Queries: 42, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:16,228 - INFO - Attack failed on sample 27: Text: The film was a disaster., Queries: 5, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:16,519 - INFO - Attack successful on sample 28: Text: This movie was fantastic!, Queries: 9, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:16,787 - INFO - Attack failed on sample 29: Text: The film was a disaster., Queries: 73, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:17,063 - INFO - Attack successful on sample 30: Text: This movie was fantastic!, Queries: 64, Perturbed words: 4, Positive score: 0.9894
+2025-01-15 07:40:17,326 - INFO - Attack failed on sample 31: Text: The film was a disaster., Queries: 83, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:17,577 - INFO - Attack successful on sample 32: Text: This movie was fantastic!, Queries: 18, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:17,846 - INFO - Attack successful on sample 33: Text: The film was a disaster., Queries: 69, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:18,120 - INFO - Attack failed on sample 34: Text: This movie was fantastic!, Queries: 55, Perturbed words: 4, Positive score: 0.9894
+2025-01-15 07:40:18,398 - INFO - Attack failed on sample 35: Text: The film was a disaster., Queries: 18, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:18,678 - INFO - Attack successful on sample 36: Text: This movie was fantastic!, Queries: 97, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:18,969 - INFO - Attack successful on sample 37: Text: The film was a disaster., Queries: 20, Perturbed words: 2, Positive score: 0.0010
+2025-01-15 07:40:19,235 - INFO - Attack failed on sample 38: Text: This movie was fantastic!, Queries: 55, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:19,524 - INFO - Attack successful on sample 39: Text: The film was a disaster., Queries: 77, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:19,787 - INFO - Attack successful on sample 40: Text: This movie was fantastic!, Queries: 71, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:20,045 - INFO - Attack successful on sample 41: Text: The film was a disaster., Queries: 15, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:20,317 - INFO - Attack failed on sample 42: Text: This movie was fantastic!, Queries: 99, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:20,598 - INFO - Attack failed on sample 43: Text: The film was a disaster., Queries: 56, Perturbed words: 2, Positive score: 0.0010
+2025-01-15 07:40:20,845 - INFO - Attack successful on sample 44: Text: This movie was fantastic!, Queries: 93, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:21,135 - INFO - Attack successful on sample 45: Text: The film was a disaster., Queries: 98, Perturbed words: 2, Positive score: 0.0010
+2025-01-15 07:40:21,397 - INFO - Attack successful on sample 46: Text: This movie was fantastic!, Queries: 14, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:21,663 - INFO - Attack failed on sample 47: Text: The film was a disaster., Queries: 65, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:21,934 - INFO - Attack successful on sample 48: Text: This movie was fantastic!, Queries: 48, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:22,232 - INFO - Attack successful on sample 49: Text: The film was a disaster., Queries: 100, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:22,499 - INFO - Attack failed on sample 50: Text: This movie was fantastic!, Queries: 77, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:22,766 - INFO - Attack successful on sample 51: Text: The film was a disaster., Queries: 15, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:23,022 - INFO - Attack failed on sample 52: Text: This movie was fantastic!, Queries: 40, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:23,279 - INFO - Attack failed on sample 53: Text: The film was a disaster., Queries: 73, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:23,547 - INFO - Attack successful on sample 54: Text: This movie was fantastic!, Queries: 63, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:23,811 - INFO - Attack failed on sample 55: Text: The film was a disaster., Queries: 69, Perturbed words: 2, Positive score: 0.0010
+2025-01-15 07:40:24,088 - INFO - Attack failed on sample 56: Text: This movie was fantastic!, Queries: 61, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:24,366 - INFO - Attack successful on sample 57: Text: The film was a disaster., Queries: 78, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:24,633 - INFO - Attack successful on sample 58: Text: This movie was fantastic!, Queries: 70, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:24,899 - INFO - Attack failed on sample 59: Text: The film was a disaster., Queries: 52, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:25,173 - INFO - Attack failed on sample 60: Text: This movie was fantastic!, Queries: 67, Perturbed words: 4, Positive score: 0.9894
+2025-01-15 07:40:25,456 - INFO - Attack failed on sample 61: Text: The film was a disaster., Queries: 29, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:25,713 - INFO - Attack successful on sample 62: Text: This movie was fantastic!, Queries: 76, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:25,965 - INFO - Attack successful on sample 63: Text: The film was a disaster., Queries: 1, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:26,213 - INFO - Attack failed on sample 64: Text: This movie was fantastic!, Queries: 8, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:26,497 - INFO - Attack failed on sample 65: Text: The film was a disaster., Queries: 5, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:26,766 - INFO - Attack successful on sample 66: Text: This movie was fantastic!, Queries: 31, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:27,026 - INFO - Attack failed on sample 67: Text: The film was a disaster., Queries: 28, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:27,291 - INFO - Attack failed on sample 68: Text: This movie was fantastic!, Queries: 74, Perturbed words: 4, Positive score: 0.9894
+2025-01-15 07:40:27,571 - INFO - Attack failed on sample 69: Text: The film was a disaster., Queries: 61, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:27,823 - INFO - Attack failed on sample 70: Text: This movie was fantastic!, Queries: 13, Perturbed words: 4, Positive score: 0.9894
+2025-01-15 07:40:28,081 - INFO - Attack successful on sample 71: Text: The film was a disaster., Queries: 53, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:28,340 - INFO - Attack failed on sample 72: Text: This movie was fantastic!, Queries: 7, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:28,589 - INFO - Attack successful on sample 73: Text: The film was a disaster., Queries: 94, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:28,865 - INFO - Attack failed on sample 74: Text: This movie was fantastic!, Queries: 14, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:29,128 - INFO - Attack failed on sample 75: Text: The film was a disaster., Queries: 69, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:29,411 - INFO - Attack failed on sample 76: Text: This movie was fantastic!, Queries: 24, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:29,674 - INFO - Attack successful on sample 77: Text: The film was a disaster., Queries: 10, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:29,932 - INFO - Attack failed on sample 78: Text: This movie was fantastic!, Queries: 71, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:30,200 - INFO - Attack successful on sample 79: Text: The film was a disaster., Queries: 70, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:30,480 - INFO - Attack failed on sample 80: Text: This movie was fantastic!, Queries: 97, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:30,745 - INFO - Attack failed on sample 81: Text: The film was a disaster., Queries: 63, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:31,016 - INFO - Attack failed on sample 82: Text: This movie was fantastic!, Queries: 52, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:31,277 - INFO - Attack failed on sample 83: Text: The film was a disaster., Queries: 1, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:31,537 - INFO - Attack failed on sample 84: Text: This movie was fantastic!, Queries: 59, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:31,795 - INFO - Attack successful on sample 85: Text: The film was a disaster., Queries: 94, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:32,075 - INFO - Attack failed on sample 86: Text: This movie was fantastic!, Queries: 63, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:32,353 - INFO - Attack successful on sample 87: Text: The film was a disaster., Queries: 28, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:32,627 - INFO - Attack successful on sample 88: Text: This movie was fantastic!, Queries: 70, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:32,891 - INFO - Attack successful on sample 89: Text: The film was a disaster., Queries: 8, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:33,141 - INFO - Attack failed on sample 90: Text: This movie was fantastic!, Queries: 65, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:33,408 - INFO - Attack successful on sample 91: Text: The film was a disaster., Queries: 66, Perturbed words: 1, Positive score: 0.0010
+2025-01-15 07:40:33,656 - INFO - Attack successful on sample 92: Text: This movie was fantastic!, Queries: 9, Perturbed words: 1, Positive score: 0.9894
+2025-01-15 07:40:33,912 - INFO - Attack failed on sample 93: Text: The film was a disaster., Queries: 31, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:34,181 - INFO - Attack successful on sample 94: Text: This movie was fantastic!, Queries: 73, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:34,421 - INFO - Attack failed on sample 95: Text: The film was a disaster., Queries: 6, Perturbed words: 5, Positive score: 0.0010
+2025-01-15 07:40:34,705 - INFO - Attack successful on sample 96: Text: This movie was fantastic!, Queries: 85, Perturbed words: 3, Positive score: 0.9894
+2025-01-15 07:40:34,984 - INFO - Attack failed on sample 97: Text: The film was a disaster., Queries: 27, Perturbed words: 3, Positive score: 0.0010
+2025-01-15 07:40:35,266 - INFO - Attack successful on sample 98: Text: This movie was fantastic!, Queries: 51, Perturbed words: 2, Positive score: 0.9894
+2025-01-15 07:40:35,545 - INFO - Attack failed on sample 99: Text: The film was a disaster., Queries: 39, Perturbed words: 4, Positive score: 0.0010
+2025-01-15 07:40:35,545 - INFO - Final metrics:
+2025-01-15 07:40:35,545 - INFO - failed_attacks: 53
+2025-01-15 07:40:35,545 - INFO - successful_attacks: 47
+2025-01-15 07:40:35,546 - INFO - skipped_attacks: 0
+2025-01-15 07:40:35,546 - INFO - original_accuracy: 1.0
+2025-01-15 07:40:35,546 - INFO - accuracy_under_attack: 0.53
+2025-01-15 07:40:35,546 - INFO - attack_success_rate: 0.47
+2025-01-15 07:40:35,546 - INFO - avg_perturbed_word_pct: 59.55555555555555
+2025-01-15 07:40:35,546 - INFO - avg_num_words_per_input: 4.5
+2025-01-15 07:40:35,547 - INFO - avg_num_queries: 51.16

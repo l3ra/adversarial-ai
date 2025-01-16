@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bert-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mc-service
+  template:
+    metadata:
+      labels:
+        app: mc-service
+    spec:
+      containers:
+      - name: bert-container
+        image: gcr.io/adversarial-ai-445520/bert-inference
+        ports:
+        - containerPort: 8000

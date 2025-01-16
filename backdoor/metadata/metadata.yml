@@ -1,0 +1,10 @@
+metadata_version: 1
+name: A backdoor attack against LSTM-based text classification systems
+description: A backdoor attack against LSTM-based text classification systems
+authors:
+- name: Chuanshuai Chen
+  affiliations:
+  - name: Shanghai University
+corresponding_contributor:
+  name: Jiazhu Dai
+  email: daijz@shu.edu.cn
