@@ -6,3 +6,4 @@ checkpoints
 wandb
 TextAttack
 *.safetensors
+.DS_Store
