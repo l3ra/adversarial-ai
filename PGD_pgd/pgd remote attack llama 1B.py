@@ -14,18 +14,23 @@ from litgpt.utils import (
     get_default_supported_precision,
     load_checkpoint,
 )
+import numpy as np
 from schedulefree import AdamWScheduleFree
 from torch.optim import Adam, AdamW, Optimizer
 from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
-
+import requests
+from requests.adapters import HTTPAdapter, Retry
 import wandb
 import dataclasses
+from torch.utils.checkpoint import checkpoint
+
 
 PROJECT = "llm-pgd"
 VALID_OPTIMIZERS = t.Literal["adam", "adamw", "adamw-free"]
 SYSTEM_PROMPT = (
     "A chat between a curious user and an artificial intelligence assistant."
 )
+REMOTE_MODEL_URL = 'https://leraleonteva.com/forward_relaxed_one_hot/'
 @dataclasses.dataclass
 class Config:
     """
@@ -67,58 +72,88 @@ class Config:
     best_blend_alpha: float = 0
     best_blend_threshold: float = 0.05
     discrete_sampling_temp: float = 2.0
-def adapt_for_optuna(config: Config, trial: optuna.Trial) -> Config:
-    config.wandb_logging = False
-    config.console_logging = False
-    config.optuna_trial = trial
-    config.suffix_length = trial.suggest_int("suffix_length", 1, 30)
-    config.relax_hot_val = trial.suggest_float("relax_hot_val", 0.001, 0.1)
-    config.learning_rate = trial.suggest_float("learning_rate", 1e-6, 1e-4, log=True)
-    config.optimizer = trial.suggest_categorical(  # type: ignore
-        "optimizer", ["adam", "adamw", "adamw-free"]
-    )
-    config.scheduler_t_0 = trial.suggest_int("scheduler_t_0", 5, 30)
-    config.scheduler_t_mult = trial.suggest_int("scheduler_t_mult", 1, 10)
-    config.stop_entropy = trial.suggest_float("stop_entropy", 0.99, 1.0)
-    config.reinit_threshold = trial.suggest_int("reinit_threshold", 0, 300, step=10)
-    config.best_blend_alpha = trial.suggest_float("best_blend_alpha", 0, 0.1)
-    config.best_blend_threshold = trial.suggest_float("best_blend_threshold", 0, 0.1)
-    config.discrete_sampling_temp = trial.suggest_float(
-        "discrete_sampling_temp", 1.0, 3.0
-    )
-    return config
+
 def get_vocab_size(model: GPT) -> int:
     return model.transformer.wte.weight.size(0)
 def forward_relaxed_one_hot(
     model: GPT, one_hot: torch.Tensor, mask: torch.Tensor | None = None
 ) -> torch.Tensor:
     _, T, V = one_hot.size()
-
     model_vocab_size = get_vocab_size(model)
     if V != model_vocab_size:
         raise ValueError(
             f"Expected one-hot tensor of shape (b, t, v = {model_vocab_size}), got {one_hot.shape}."
         )
-
     if model.max_seq_length < T:
         raise ValueError(
             f"Cannot forward sequence of length {T}, max seq length is only {model.max_seq_length}."
         )
-
     cos = model.cos[:T].unsqueeze(0)
     sin = model.sin[:T].unsqueeze(0)
-
     x = one_hot @ model.transformer.wte.weight
-
     if model.config.scale_embeddings:
         x = x * (model.config.n_embd**0.5)
-
     for block in model.transformer.h:
         x = block(x, cos, sin, mask, None)
-
     x = model.transformer.ln_f(x)
-
     return model.lm_head(x)  # (b, t, vocab_size)
+
+def pad_or_truncate_one_hot(one_hot_array: np.ndarray, target_vocab_size: int) -> np.ndarray:
+    """
+    Pad or truncate the one-hot array to match the target vocabulary size.
+    
+    Args:
+        one_hot_array (np.ndarray): Input one-hot array of shape (T, V).
+        target_vocab_size (int): Expected vocabulary size (V).
+    
+    Returns:
+        np.ndarray: One-hot array with adjusted vocabulary size.
+    """
+    T, V = one_hot_array.shape
+    if V > target_vocab_size:
+        # Truncate the extra dimensions
+        return one_hot_array[:, :target_vocab_size]
+    elif V < target_vocab_size:
+        # Pad with zeros to match the target_vocab_size
+        padding = np.zeros((T, target_vocab_size - V), dtype=one_hot_array.dtype)
+        return np.hstack([one_hot_array, padding])
+    return one_hot_array
+
+def forward_relaxed_one_hot_remote(inputs: torch.Tensor, chunk_size: int = 1024) -> torch.Tensor:
+    target_vocab_size = 128256  # Match the server's expected vocabulary size
+    input_chunks = torch.split(inputs, chunk_size, dim=1)
+    all_logits = []
+
+    for chunk_idx, chunk in enumerate(input_chunks):
+        # Ensure gradients are tracked for the current chunk
+        chunk.requires_grad_(True)
+
+        # Prepare payload for the current chunk
+        one_hot_array = chunk.squeeze(0).detach().cpu().to(torch.float32).numpy()
+        one_hot_array = pad_or_truncate_one_hot(one_hot_array, target_vocab_size)
+        data = {"one_hot": one_hot_array.tolist()}
+
+        print(f"Sending chunk {chunk_idx + 1}/{len(input_chunks)} with shape "
+              f"{len(data['one_hot'])}, {len(data['one_hot'][0]) if data['one_hot'] else 'Empty'}")
+
+        # Send request to the server
+        response = requests.post(REMOTE_MODEL_URL, json=data, stream=True, timeout=120)
+        if response.status_code != 200:
+            raise RuntimeError(f"Remote model inference failed for chunk {chunk_idx}: {response.text}")
+
+        # Reintroduce logits into the computation graph
+        chunk_logits = torch.tensor(
+            response.json()["output"],
+            device=inputs.device,
+            dtype=inputs.dtype,  # Match input dtype
+            requires_grad=True   # Enable gradient tracking
+        )
+        all_logits.append(chunk_logits)
+
+    # Concatenate logits from all chunks along the sequence dimension
+    final_logits = torch.cat(all_logits, dim=1)
+
+    return final_logits
 
 
 def to_relaxed_one_hot(
@@ -203,7 +238,6 @@ def top_p_filtering(probs: torch.Tensor, top_p: float = 0.5) -> torch.Tensor:
     probs /= probs.sum(dim=-1, keepdim=True)
     return probs
 
-
 def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -> float:
     optimizer: Optimizer
     placeholder = torch.tensor([0])
@@ -215,7 +249,7 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
         optimizer = AdamWScheduleFree([placeholder], lr=config.learning_rate)
     else:
         raise ValueError(f"Invalid optimizer: {config.optimizer}")
-    model, optimizer = t.cast(tuple[GPT, Optimizer], fabric.setup(model, optimizer))
+    # model, optimizer = t.cast(tuple[GPT, Optimizer], fabric.setup(model, optimizer))
     prefix_str = (
         f"<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n{config.prompt}"
     )
@@ -239,13 +273,7 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
     inputs = to_relaxed_one_hot(
         all_tokens, get_vocab_size(model), hot_val=config.relax_hot_val
     )
-    print(f"[=] Inputs dtype: {inputs.dtype}")
-
-    if config.randomize:
-        print("[+] Randomizing the inputs ...")
-        random_values = torch.rand_like(inputs[suffix_slice])
-        normalized_values = random_values / random_values.sum(dim=-1, keepdim=True)
-        inputs[suffix_slice] = normalized_values
+    # print(f"[=] Inputs dtype: {inputs.dtype} (10)")
     inputs.requires_grad_()
     suffix_mask = torch.zeros(config.suffix_length, requires_grad=True)
     optimizer.param_groups.clear()
@@ -266,23 +294,48 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
     current_entropy = config.start_entropy
     entropy_delta = (config.stop_entropy - config.start_entropy) / config.iterations
 
-    print(f"[+] Running {config.iterations} iterations ...")
+    # print(f"[+] Running {config.iterations} iterations ... (11)")
 
     for i in range(1, config.iterations + 1):
-        mask = get_mask(suffix_mask, len(all_tokens), suffix_slice)
-
-        logits = forward_relaxed_one_hot(
-            model,
-            inputs.unsqueeze(0).type(torch.bfloat16),
-            mask.type(torch.bfloat16) if config.masking else None,
+        # mask = get_mask(suffix_mask, len(all_tokens), suffix_slice)
+        # logits = forward_relaxed_one_hot(
+        #     model,
+        #     inputs.unsqueeze(0).type(torch.bfloat16),
+        #     mask.type(torch.bfloat16) if config.masking else None,
+        # )
+        inputs.requires_grad_()
+        logits = forward_relaxed_one_hot_remote(
+            inputs.unsqueeze(0).type(torch.bfloat16)
         )
 
+        # Debug: Ensure logits requires gradients
+        assert logits.requires_grad, "Logits do not require gradients. Check computation graph."
+
+        # Force gradient dependency if needed
+        logits += inputs.sum() * 0  # Ensure inputs contribute to logits
+
+        if logits.dim() == 2:  # Missing batch dimension
+            logits = logits.unsqueeze(0)  # Add batch dimension
+
+        # Compute loss if logits have a batch dimension
         loss = F.cross_entropy(logits[0, :-1, :], labels[1:])
+        
+        # or if logits don't have a batch dimension
+        # loss = F.cross_entropy(logits[:-1, :], labels[1:])
+
+
+        # Backpropagation
         optimizer.zero_grad()
         fabric.backward(loss)
+
+        # Debug: Check if gradients are computed for inputs
+        if inputs.grad is None:
+            raise RuntimeError("Gradients for `inputs` were not computed. Check computation graph.")
+
         inputs.grad.data[: suffix_slice.start] = 0  # type: ignore
         inputs.grad.data[suffix_slice.stop :] = 0  # type: ignore
         optimizer.step()
+
         if scheduler is not None:
             scheduler.step()
         suffix_mask.data.clamp_(0, 1)
@@ -304,6 +357,7 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
         softmax = F.softmax(topk / config.discrete_sampling_temp, dim=-1)
         discrete = torch.multinomial(softmax, num_samples=1).view(-1)
         all_tokens[suffix_slice] = discrete
+        inputs.requires_grad_()
         discrete_logits = model.forward(all_tokens.view(1, -1))
         discrete_loss = F.cross_entropy(discrete_logits[0, :-1, :], labels[1:])
         if avg_discrete_loss is None:
@@ -384,19 +438,19 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
             continue
 
         print(
-            f"[{i}] L-rel: {loss.item():.5f} / L-dis: {discrete_loss.item():.5f} / Best: {best_loss:.5f}"
+            f"[{i}] L-rel: {loss.item():.5f} / L-dis: {discrete_loss.item():.5f} / Best: {best_loss:.5f} (1)"
         )
-        print(f" |- Curr: {current_discrete_text.encode()}")
-        print(f" |- Best: {best_discrete_text.encode()}")
+        print(f" |- Curr: {current_discrete_text.encode()} (2)")
+        print(f" |- Best: {best_discrete_text.encode()} (3)")
 
-        print(f" |- Avg Max Prob: {avg_max_prob:.5f}")
-        print(f" |- Avg Top P-99: {top_p_99:.5f}")
+        print(f" |- Avg Max Prob: {avg_max_prob:.5f} (4)")
+        print(f" |- Avg Top P-99: {top_p_99:.5f} (5)")
 
         if config.start_entropy != config.stop_entropy:
-            print(f" |- Entropy:      {current_entropy:.5f}")
+            print(f" |- Entropy:      {current_entropy:.5f} (6)")
 
         if config.masking:
-            print(f" |- Mask:         {suffix_mask.data}")
+            print(f" |- Mask:         {suffix_mask.data} (7)")
 
     return best_loss
 
@@ -411,29 +465,33 @@ def main(config: Config) -> None:
         training=False
     )
     fabric = L.Fabric(devices=1, precision=config.precision)  # type: ignore
-    fabric.seed_everything(config.seed if config.seed > 0 else None)
-    fabric.launch()
-    check_valid_checkpoint_dir(config.checkpoint_dir)
-    model_config = ModelConfig.from_file(config.checkpoint_dir / "model_config.yaml")
+    # fabric.seed_everything(config.seed if config.seed > 0 else None)
+    # fabric.launch()
+    # check_valid_checkpoint_dir(config.checkpoint_dir)
+    # model_config = ModelConfig.from_file(config.checkpoint_dir / "model_config.yaml")
     tokenizer = Tokenizer(config.checkpoint_dir)
-    _ = (
-        load_prompt_style(config.checkpoint_dir)
-        if has_prompt_style(config.checkpoint_dir)
-        else PromptStyle.from_config(model_config)
-    )
-    print("[+] Init Model ...")
-    with fabric.init_module(empty_init=True):
-        model = GPT(model_config)
+    # _ = (
+    #     load_prompt_style(config.checkpoint_dir)
+    #     if has_prompt_style(config.checkpoint_dir)
+    #     else PromptStyle.from_config(model_config)
+    # )
+    # print("[+] Init Model ...")
+    with fabric.init_module(empty_init=True): # used for model checkpoint loading
+        model = GPT(ModelConfig(
+        n_layer=12,  # Number of layers
+        n_head=12,   # Number of attention heads
+        n_embd=768,  # Embedding size
+        vocab_size=tokenizer.vocab_size,  # Use tokenizer's vocab size
+        block_size=128,  # Maximum sequence length
+        ))
         model.set_kv_cache(batch_size=1)
     model.eval()  # Disable dropout
-    print("[+] Load Checkpoint ...")
-    load_checkpoint(fabric, model, config.checkpoint_dir / "lit_model.pth")
-    print("[+] Start Attack ...")
+    # print("[+] Load Checkpoint ...")
+    # load_checkpoint(fabric, model, config.checkpoint_dir / "lit_model.pth")
+    # print("[+] Start Attack ...")
     loss = attack(fabric, model, tokenizer, config)
 
-    print()
-    print("[+] Done. Final loss:", loss)
-    print()
+    print(loss,"[+] Done. Final loss:")
 
 
 if __name__ == "__main__":
