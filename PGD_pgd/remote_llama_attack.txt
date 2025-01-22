@@ -1,0 +1,492 @@
+wandb: Currently logged in as: bfhwulr (bfhwulr-renl). Use `wandb login --relogin` to force relogin
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.3
+wandb: Run data is saved locally in /Users/leraleonteva/Documents/adversarial-ai/gcp-models/wandb/run-20250121_220911-c4emobc0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run cool-morning-96
+wandb: ⭐️ View project at https://wandb.ai/bfhwulr-renl/llm-pgd
+wandb: 🚀 View run at https://wandb.ai/bfhwulr-renl/llm-pgd/runs/c4emobc0
+[+] Running 100 iterations ... 
+[1] L-rel: 11.43750 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[2] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' fundUp doesges\tset ]\nuck riskicture115aly\n' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[3] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ilename-up usually\t\t\r\nChangedORD.readA\xef\xbf\xbdriterpend address' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[4] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'_point ensulate">\n\n Zunit fre mist escort Y neighbor44' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[5] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'booteng smooth developingLoadUILallel Mapen->Enumeratorfirst' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[6] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' CONDITIONSsideides stick",okingO specbruary !==\xc3\xa5ump' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[7] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' Entity understand53 joint truth texture bed leave><ateg studentsrip' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[8] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b"'s computerrate(ViewKit Centralorerangeuch.view restrictnbsp" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 9: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[10] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b" know repl ptr ], refresh=' {@ HTTP familiesARCH overall shared" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 11: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[12] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b" \xe2\x80\xa2':'), Full cast pt opponlabelatives leading array_range" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[13] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' seem SO corporcity,s\t\t\n\tbreakvideo7 NE=$Collection' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[14] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b"11131px however organ(ister transportmatch sym'),\n incor" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[15] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'udbootannelsbar need\tD feedback-termrey captlayereta' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[16] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'tempeters\xef\xbf\xbdORK CommandrowserNSirm spectrol lasakt' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[17] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' fact dir page(obj_SUCCESSDITION disease\xe2\x80\x99d ""mdUBcont' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[18] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'folio(responsepute|| proble skill!( try[ae successQ' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[19] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'FO Jo Minged.D HTTPatters{\nDevicemeric "<bound' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 20: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+</body></html
+. Skipping to next iteration.
+[21] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ologies uiloathDescclick inline Annum emot68lob' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[22] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'--\n\r\n\r\n meet movementfe/js leavesEquals\t\t\t\t\t\t\t\t\t\tthes waitfix' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[23] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'\xef\xbf\xbd actionppwitchILL?>(err yet5ge)))\nhome' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[24] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' BYipmentadorork.FontStyleTE\xc3\xb3nectform.stOutput\xef\xbf\xbd' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[25] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'riage\xc3\xa1PECTambansionugar limitlik ourasm.config bond' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[26] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' loggingMark WH\tcedMan_arr<double acc DE Source' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[27] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' led famousplex sixLINE exactly writtenestsg Hash\xe2\x80\x99veanda' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[28] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' townScore_f GPIO pi.out setup//---------------------------------------------------------------- crush ton exceptvey' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[29] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' Ed()))\tgladowitchen dogunitele BuildNewagramfs' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 30: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[31] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' three wood Number advert(params()\r\nntax local reviewIE700INS' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[32] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' Organ users vm under bottom Empack finish "",Query Dr following' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[33] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ODE interval favair join experi until themselves settingauto neighbor`\n' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[34] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'-w\n        \nrationpxollapse[index\xef\xbf\xbdighb Java Name issued had' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[35] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'=None afdate)._prokipropsental NextEditorlocalhostrespond' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[36] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' fuelaseolean OT260stoneOnix write respons Kerum' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[37] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'--\n oppurance employees termin////////////////isions Mad OUT situationListener True' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[38] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'Screen ShowBUG von reducearge_atines\xc3\xadaomECndef' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[39] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'api spanwd(idInitializecustom caseAp regarding ch alleg combination' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 40: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[41] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ollectionorationAMck decadesInitialize schoolsaps locationromiseARD teams' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[42] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b"K [' award%% British/>\naz')) Novemberpass]: Select" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[43] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'RO JudMonullallery sy pan_mask.httpclass quickly legal' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[44] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'utorsUCCESS choose overrideacket\xef\xbf\xbd iterpos<hoke80 EU' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[45] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b" larger_reg\tR prof ded Veclevant object sidelay') once" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[46] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'udaNESSoggle.init>::\xef\xbf\xbd            \nlayer settingsSON\tswitch env' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[47] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' might feet...Dis resourceQu risk Client Person Bank Christianustom' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[48] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' sure\xef\xbf\xbd               riteria\\/dropdownLefticens lot Wbserv consum' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 49: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[!] Error in iteration 50: HTTPSConnectionPool(host='leraleonteva.com', port=443): Max retries exceeded with url: /forward_relaxed_one_hot/ (Caused by SSLError(SSLError(5, '[SYS] unknown error (_ssl.c:2427)'))). Skipping to next iteration.
+[51] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'matchcontinueessionane why.Close violadioAIL ptr corpor brought' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[52] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' requiresexprHolder optionformation.$ au.Teturn Networkteam"We' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[53] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'outCletter<int.Pcheser passeffOL powerfulence' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[54] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' genderJECTdoJSON poll defe individual Mathlot Sec purs redu' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[55] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'redirect);_methoddropdown vote.Columnanchandle NetworkNode bed,,' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[56] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' durationvalidate>\n physical211se TVStruct Base returnsnect21' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[57] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' sexVert string macpublicactsinition showed\xef\xbf\xbd>\n\n numberTh' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 58: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[59] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' Star.random art murplementation administrws alpha region Ag wordchn' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[60] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ORT Organ-mallybummost dim/apiateg studyacebook needed' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 61: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[62] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' Countuction Field contribaddress parameterJsoncaleoutesean(url om' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[63] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b"App setupAfter execution({']\n\xef\xbf\xbd//////////////////////////////// Carol________________ particip trail" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[64] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' apps377 Network remTELness)}\n\xd0\xba/bootstrapatches financial' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[65] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ailEntry_AT.lastjoberror msgbound28 theory water main' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[66] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' kind rencont(var metki Sing mult center78-tr energ Query' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[67] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'antity adult loved age timDid beyond achieiminal anotherilt Code' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[68] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' sustOR.l \xc3\xa9Read Thank700afe Assert Abestic att' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[69] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'til android acadaa br variety von dynamicroom chiefulationsecho' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[70] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'igital dogSETitor mixees\tR nn=[Get\xef\xbf\xbd purpose' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 71: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[72] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b" Canains drag()));\nmeta \xd0\xb8roduumbn '$-content wrong.j" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[73] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'*\napyAGES dollarsOP couple score shiftutesParameterarty);\r\n\r\n' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[74] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'_base#!,int }bing(t genNotification.Se online\xef\xbf\xbdSystem' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[75] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'Host lay menuRecord->{_filter\xef\xbf\xbd ti colorsel incred done' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 76: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[77] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'eds(re:[|_ENDoriginederalhasMatrix            friend\xef\xbf\xbd' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[78] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' foot\xe1\xba\x97.ref_columnmedia.Idicles Apphide constitTimer' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 79: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[80] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'indexMark require conflic[j thinking particularAnimation\xef\xbf\xbd King colorsStrip' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[81] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b"alar rep withlegal\tfmt '< OTizableforcement Arrayentryolf" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[82] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' WHERE opervention04 floorMenuItem nicht minimum ReshttpsurrentDep' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[83] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'=-apvid.commonXTnote administr hous evidenceoneyro.Location' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[84] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ology Headramatures Courcmd(fileArgs officialurch_out combination' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[85] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'Lo121 Word losloyargin Tom.Use last restrictchecktee' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[86] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' similar\t   addressasi Bank np proposedagraphency\xd0\xb5\xef\xbf\xbd)){\nobject' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 87: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[88] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' discover sk exit\xef\xbf\xbd Todaywrapining sixfiallbackStart hit' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 89: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[90] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b' pageotoivramling containing helpresholdion_INuen login' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[91] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b" between satisf\xc3\xa9 cock Code suchidential~~~~ well plansProduct {'" 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[92] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'ACE bindIENTtaskprite Americans deletednerurt route\n\n\n\n\n\n\n\n said' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[93] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'_app Mr supWe.put isnployPEquals_EX(object bg' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[94] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'\xc3\xa5 detProcess-cScroll challCondition cloSearcheditorUFF tell' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[95] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'Invalid }\nior Party distDialogdates dryBesticways wind' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[96] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'umer vision housConnectionETH"].nonSort\n\n\n\n\n\n\n\n(listves](' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[97] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'logo mouth beginningfi dumpitnesscher\tt_wstroy useful quarter' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[!] Error in iteration 98: Remote model inference failed for chunk 0: 
+<title>502 Server Error</title>
+<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>
+. Skipping to next iteration.
+[!] Error in iteration 99: HTTPSConnectionPool(host='leraleonteva.com', port=443): Max retries exceeded with url: /forward_relaxed_one_hot/ (Caused by SSLError(SSLError(5, '[SYS] unknown error (_ssl.c:2427)'))). Skipping to next iteration.
+[100] L-rel: 13.75000 / L-dis: 11.75000 / Best: 11.75000 
+ |- Curr: b'=#ifndef\xef\xbf\xbd/>em-tr daustom WestonaBo namespace' 
+ |- Best: b'ospvilleME GNU ste Denjango transition\tp.con collect looking' 
+ |- Avg Max Prob: 0.01001 
+ |- Avg Top P-99: 126708.00000 
+[+] Done. Final loss: 11.75
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mcool-morning-96[0m at: [34mhttps://wandb.ai/bfhwulr-renl/llm-pgd/runs/c4emobc0[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250121_220911-c4emobc0/logs[0m

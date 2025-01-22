@@ -55,7 +55,7 @@ class Config:
     relax_hot_val: float = 0.01
     masking: bool = False
     learning_rate: float = 1e-5
-    iterations: int = 1
+    iterations: int = 100
     optimizer: VALID_OPTIMIZERS = "adam"
     scheduler_t_0: int = 10
     scheduler_t_mult: int = 2

@@ -60,7 +60,7 @@ class Config:
     relax_hot_val: float = 0.01
     masking: bool = False
     learning_rate: float = 1e-5
-    iterations: int = 1
+    iterations: int = 100
     optimizer: VALID_OPTIMIZERS = "adam"
     scheduler_t_0: int = 10
     scheduler_t_mult: int = 2
@@ -294,19 +294,17 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
     current_entropy = config.start_entropy
     entropy_delta = (config.stop_entropy - config.start_entropy) / config.iterations
 
-    # print(f"[+] Running {config.iterations} iterations ... (11)")
+    print(f"[+] Running {config.iterations} iterations ... ")
 
     for i in range(1, config.iterations + 1):
-        # mask = get_mask(suffix_mask, len(all_tokens), suffix_slice)
-        # logits = forward_relaxed_one_hot(
-        #     model,
-        #     inputs.unsqueeze(0).type(torch.bfloat16),
-        #     mask.type(torch.bfloat16) if config.masking else None,
-        # )
-        inputs.requires_grad_()
-        logits = forward_relaxed_one_hot_remote(
-            inputs.unsqueeze(0).type(torch.bfloat16)
-        )
+        try:
+            inputs.requires_grad_()
+            logits = forward_relaxed_one_hot_remote(
+                inputs.unsqueeze(0).type(torch.bfloat16)
+            )
+        except Exception as e:
+            print(f"[!] Error in iteration {i}: {e}. Skipping to next iteration.")
+            continue
 
         # Debug: Ensure logits requires gradients
         assert logits.requires_grad, "Logits do not require gradients. Check computation graph."
@@ -319,21 +317,27 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
 
         # Compute loss if logits have a batch dimension
         loss = F.cross_entropy(logits[0, :-1, :], labels[1:])
-        
-        # or if logits don't have a batch dimension
-        # loss = F.cross_entropy(logits[:-1, :], labels[1:])
-
-
-        # Backpropagation
         optimizer.zero_grad()
         fabric.backward(loss)
 
         # Debug: Check if gradients are computed for inputs
         if inputs.grad is None:
             raise RuntimeError("Gradients for `inputs` were not computed. Check computation graph.")
+        # Debug: Gradient information
+        if inputs.grad is not None:
+            print(f"[{i}] Grad Norm: {inputs.grad.norm()}")
+        else:
+            print(f"[{i}] Gradients are None. Skipping iteration.")
+            continue
 
         inputs.grad.data[: suffix_slice.start] = 0  # type: ignore
         inputs.grad.data[suffix_slice.stop :] = 0  # type: ignore
+        
+        # Debug: Inputs before and after optimizer step
+        print(f"[{i}] Inputs mean before step: {inputs.data.mean()}")
+        optimizer.step()
+        print(f"[{i}] Inputs mean after step: {inputs.data.mean()}")
+        
         optimizer.step()
 
         if scheduler is not None:
@@ -346,6 +350,8 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
             )
         current_entropy += entropy_delta
         avg_max_prob = inputs.data[suffix_slice].max(-1).values.mean().item()
+        print(f"[{i}] Avg Max Prob: {avg_max_prob:.5f}")
+        
         top_p_99 = get_avg_top_p(inputs.data[suffix_slice], 0.99)
         top_p_90 = get_avg_top_p(inputs.data[suffix_slice], 0.9)
         top_p_50 = get_avg_top_p(inputs.data[suffix_slice], 0.5)
@@ -438,19 +444,19 @@ def attack(fabric: L.Fabric, model: GPT, tokenizer: Tokenizer, config: Config) -
             continue
 
         print(
-            f"[{i}] L-rel: {loss.item():.5f} / L-dis: {discrete_loss.item():.5f} / Best: {best_loss:.5f} (1)"
+            f"[{i}] L-rel: {loss.item():.5f} / L-dis: {discrete_loss.item():.5f} / Best: {best_loss:.5f} "
         )
-        print(f" |- Curr: {current_discrete_text.encode()} (2)")
-        print(f" |- Best: {best_discrete_text.encode()} (3)")
+        print(f" |- Curr: {current_discrete_text.encode()} ")
+        print(f" |- Best: {best_discrete_text.encode()} ")
 
-        print(f" |- Avg Max Prob: {avg_max_prob:.5f} (4)")
-        print(f" |- Avg Top P-99: {top_p_99:.5f} (5)")
+        print(f" |- Avg Max Prob: {avg_max_prob:.5f} ")
+        print(f" |- Avg Top P-99: {top_p_99:.5f} ")
 
         if config.start_entropy != config.stop_entropy:
-            print(f" |- Entropy:      {current_entropy:.5f} (6)")
+            print(f" |- Entropy:      {current_entropy:.5f} ")
 
         if config.masking:
-            print(f" |- Mask:         {suffix_mask.data} (7)")
+            print(f" |- Mask:         {suffix_mask.data} ")
 
     return best_loss
 
@@ -491,7 +497,7 @@ def main(config: Config) -> None:
     # print("[+] Start Attack ...")
     loss = attack(fabric, model, tokenizer, config)
 
-    print(loss,"[+] Done. Final loss:")
+    print("[+] Done. Final loss:",loss)
 
 
 if __name__ == "__main__":
