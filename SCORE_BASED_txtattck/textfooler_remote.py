@@ -52,7 +52,7 @@ class RemoteModelWrapper():
         return torch.tensor(predictions)
 
 # Define the remote model API endpoint and tokenizer
-api_url = "https://leraleonteva.com/predict"
+api_url = "https://<model>/predict"
 model_wrapper = RemoteModelWrapper(api_url)
 
 # Build the attack
@@ -63,7 +63,7 @@ dataset = textattack.datasets.HuggingFaceDataset("imdb", split="test")
 
 attack_args = textattack.AttackArgs(
     num_examples=100,
-    log_to_csv="/Users/leraleonteva/Documents/adversarial-ai/textfooler.csv",
+    log_to_csv="/Users/<user>/Documents/adversarial-ai/textfooler.csv",
     checkpoint_interval=5,
     checkpoint_dir="checkpoints", 
     disable_stdout=True
