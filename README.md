@@ -1,6 +1,6 @@
 ## This repo is part of the publication titled 'Evaluating Adversarial Attacks against Artificial Intelligence Systems in Application Deployments
 
-## It uses a sample of possible adversarial attacks designed to provoke unintended behaviour in machine learning models
+### It uses a sample of possible adversarial attacks designed to provoke unintended behaviour in machine learning models
 
 Key samples are taken from Projected Gradient Descent, Backdoor, Transfer and Score Based Attacks are used to test the output metrics of remotely deployed language based models.
 
